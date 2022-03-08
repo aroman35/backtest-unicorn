@@ -13,11 +13,9 @@ public class AttachSimulationRequestHandler : UpdateStateRequestHandler<AttachSi
     {
     }
     
-    private protected override UpdateDefinition<PersistenceModel<JobState>> UpdateDefinition(
-        AttachSimulationRequest request)
+    private protected override UpdateDefinition<PersistenceModel<JobState>> UpdateDefinition(AttachSimulationRequest request)
     {
         var updateDefinition = UpdateDefinitionBuilder.Set(x => x.State.SimulationId, request.SimulationId);
         return updateDefinition;
     }
-
 }

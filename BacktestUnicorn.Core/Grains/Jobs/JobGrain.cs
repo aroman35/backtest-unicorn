@@ -16,10 +16,10 @@ public class JobGrain : PersistentGrain<JobState, JobEventBase>, IJobGrain
     {
     }
 
-    public Task Attach(Guid simulationId)
+    public async Task Attach(Guid simulationId)
     {
         _simulation = GrainFactory.GetGrain<ISimulationGrain>(simulationId);
+        _backtest = GrainFactory.GetGrain<IBacktestGrain>(await _simulation.GroupId());
         RaiseEvent(new AttachSimulationEvent(simulationId));
-        return Task.CompletedTask;
     }
 }

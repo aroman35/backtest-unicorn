@@ -27,28 +27,28 @@ public abstract class UpdateStateRequestHandler<TUpdateStateRequest, TState> : I
 
     private protected virtual Task HandlePreconditions(TUpdateStateRequest request, CancellationToken cancellationToke)
     {
+        Logger.Information("Preparing to update {StateName}", typeof(TState).Name);
         return Task.CompletedTask;
     }
     
-    private protected virtual Task HandleCallback(TUpdateStateRequest request, UpdateResult updateResult, CancellationToken cancellationToke)
+    private protected virtual Task<bool> HandleCallback(TUpdateStateRequest request, UpdateResult updateResult, CancellationToken cancellationToke)
     {
-        return Task.CompletedTask;
+        if (updateResult.IsAcknowledged)
+            Logger.Information("{StateName} was successfully updated", typeof(TState).Name);
+        else
+            Logger.Warning("There was an error updating state for {StateName}", typeof(TState).Name);
+        return Task.FromResult(updateResult.IsAcknowledged);
     }
     
     public virtual async Task<bool> Handle(TUpdateStateRequest request, CancellationToken cancellationToken)
     {
         await HandlePreconditions(request, cancellationToken);
-        Logger.Information("Preparing to update {StateName}", typeof(TState).Name);
+        
         var updateResult = await Collection.UpdateOneAsync(request.Filter(), UpdateDefinition(request), new UpdateOptions
         {
             IsUpsert = IsUpsert
         }, cancellationToken);
-
-        if (updateResult.IsAcknowledged)
-            Logger.Information("{StateName} was successfully updated", typeof(TState).Name);
-        else
-            Logger.Warning("There was an error updating state for {StateName}", typeof(TState).Name);
-        await HandleCallback(request, updateResult, cancellationToken);
-        return updateResult.IsAcknowledged;
+        
+        return await HandleCallback(request, updateResult, cancellationToken);
     }
 }

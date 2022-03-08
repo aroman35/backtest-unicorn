@@ -12,7 +12,7 @@ public class PersistentGrain<TState, TEvent> : JournaledGrain<TState, TEvent>, I
 {
     private readonly IMediator _mediator;
 
-    public PersistentGrain(IMediator mediator)
+    protected PersistentGrain(IMediator mediator)
     {
         _mediator = mediator;
     }

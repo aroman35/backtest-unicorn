@@ -20,23 +20,26 @@ public abstract class UpdateStateRequestHandler<TUpdateStateRequest, TState> : I
     protected UpdateStateRequestHandler(IMongoDbContext mongoDbContext, ILogger logger)
     {
         MongoDbContext = mongoDbContext;
-        Logger = logger.ForContext<UpdateStateRequest<TState>>();
+        Logger = logger
+            .ForContext<UpdateStateRequest<TState>>()
+            .ForContext("GrainState", typeof(TState).Name);
     }
 
     private protected abstract UpdateDefinition<PersistenceModel<TState>> UpdateDefinition(TUpdateStateRequest request);
 
     private protected virtual Task HandlePreconditions(TUpdateStateRequest request, CancellationToken cancellationToke)
     {
-        Logger.Information("Preparing to update {StateName}", typeof(TState).Name);
+        Logger.BindProperty("Id", request.Id, true, out _);
+        Logger.Information("Preparing to update");
         return Task.CompletedTask;
     }
     
     private protected virtual Task<bool> HandleCallback(TUpdateStateRequest request, UpdateResult updateResult, CancellationToken cancellationToke)
     {
         if (updateResult.IsAcknowledged)
-            Logger.Information("{StateName} was successfully updated", typeof(TState).Name);
+            Logger.Information("Successfully updated");
         else
-            Logger.Warning("There was an error updating state for {StateName}", typeof(TState).Name);
+            Logger.Warning("There was an error updating state");
         return Task.FromResult(updateResult.IsAcknowledged);
     }
     

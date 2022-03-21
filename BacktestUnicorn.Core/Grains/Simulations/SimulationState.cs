@@ -1,6 +1,6 @@
 ﻿using BacktestUnicorn.Abstractions.StateManagement;
 
-namespace BacktestUnicorn.Core.States;
+namespace BacktestUnicorn.Core.Grains.Simulations;
 
 public class SimulationState : State
 {

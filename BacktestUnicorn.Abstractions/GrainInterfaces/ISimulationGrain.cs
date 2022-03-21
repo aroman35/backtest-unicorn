@@ -4,5 +4,5 @@ namespace BacktestUnicorn.Abstractions.GrainInterfaces;
 
 public interface ISimulationGrain : IGrainWithGuidKey
 {
-    Task<Guid> GroupId();
+    Task Create(Guid backtestId);
 }

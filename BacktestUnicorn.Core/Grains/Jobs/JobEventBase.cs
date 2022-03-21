@@ -2,4 +2,4 @@
 
 namespace BacktestUnicorn.Core.Grains.Jobs;
 
-public abstract record JobEventBase : EventBase<JobState>;
+public abstract record JobEventBase(Guid GrainId) : EventBase<JobState>(GrainId);

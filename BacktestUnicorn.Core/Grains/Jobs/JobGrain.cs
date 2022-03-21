@@ -1,25 +1,20 @@
 ﻿using BacktestUnicorn.Abstractions.GrainInterfaces;
 using BacktestUnicorn.Abstractions.GrainPersistence;
+using BacktestUnicorn.Core.Common;
 using BacktestUnicorn.Core.Grains.Jobs.Commands;
-using MediatR;
+using Orleans;
 using Orleans.Providers;
 
 namespace BacktestUnicorn.Core.Grains.Jobs;
 
-[LogConsistencyProvider(ProviderName = "CustomStorage")]
+[LogConsistencyProvider(ProviderName = OrleansClusterConstants.StorageName)]
 public class JobGrain : PersistentGrain<JobState, JobEventBase>, IJobGrain
 {
     private ISimulationGrain _simulation;
-    private IBacktestGrain _backtest;
-    
-    public JobGrain(IMediator mediator) : base(mediator)
-    {
-    }
-
-    public async Task Attach(Guid simulationId)
+    public async Task Create(Guid simulationId)
     {
         _simulation = GrainFactory.GetGrain<ISimulationGrain>(simulationId);
-        _backtest = GrainFactory.GetGrain<IBacktestGrain>(await _simulation.GroupId());
-        RaiseEvent(new AttachSimulationEvent(simulationId));
+        RaiseEvent(new AttachSimulationEvent(this.GetPrimaryKey(), simulationId));
+        await ConfirmEvents();
     }
 }

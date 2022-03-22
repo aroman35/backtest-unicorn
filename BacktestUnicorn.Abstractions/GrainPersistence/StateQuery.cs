@@ -3,5 +3,5 @@ using MediatR;
 
 namespace BacktestUnicorn.Abstractions.GrainPersistence;
 
-public record StateRequest<TState>(Guid Id) : IRequest<TState>
+public record StateQuery<TState>(Guid Id) : IRequest<KeyValuePair<int, TState>>
     where TState : State;

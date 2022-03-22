@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.MediatorTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Mediator.Benchmark", "BacktestUnicorn.Mediator.Benchmark\BacktestUnicorn.Mediator.Benchmark.csproj", "{64C7329C-DD15-4D09-AE19-2B539DBE26C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{E9E2EF90-E44F-4414-A8BB-702D6E92D31F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.SiloTestCluster", "BacktestUnicorn.SiloTestCluster\BacktestUnicorn.SiloTestCluster.csproj", "{617E5660-8057-4986-9D54-152421F07196}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,9 +54,15 @@ Global
 		{64C7329C-DD15-4D09-AE19-2B539DBE26C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64C7329C-DD15-4D09-AE19-2B539DBE26C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64C7329C-DD15-4D09-AE19-2B539DBE26C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617E5660-8057-4986-9D54-152421F07196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617E5660-8057-4986-9D54-152421F07196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617E5660-8057-4986-9D54-152421F07196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617E5660-8057-4986-9D54-152421F07196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2AEEE8AA-E682-491D-A9E3-41CFD76760C1} = {4C213121-26E3-453B-9A82-C510E6812965}
 		{64C7329C-DD15-4D09-AE19-2B539DBE26C3} = {4C213121-26E3-453B-9A82-C510E6812965}
+		{624EE7C6-6D8E-4088-A65A-E4AC74B4547D} = {E9E2EF90-E44F-4414-A8BB-702D6E92D31F}
+		{617E5660-8057-4986-9D54-152421F07196} = {4C213121-26E3-453B-9A82-C510E6812965}
 	EndGlobalSection
 EndGlobal

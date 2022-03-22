@@ -1,0 +1,335 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.SiloTestCluster/BacktestUnicorn.SiloTestCluster.csproj": {}
+  },
+  "projects": {
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj",
+        "projectName": "BacktestUnicorn.Abstractions",
+        "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj",
+        "packagesPath": "/Users/alex/.nuget/packages/",
+        "outputPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/alex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Orleans.CodeGenerator.MSBuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "Microsoft.Orleans.Core.Abstractions": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "Microsoft.Orleans.EventSourcing": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj",
+        "projectName": "BacktestUnicorn.Core",
+        "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj",
+        "packagesPath": "/Users/alex/.nuget/packages/",
+        "outputPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/alex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj",
+        "projectName": "BacktestUnicorn.Persistence.Mapping",
+        "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj",
+        "packagesPath": "/Users/alex/.nuget/packages/",
+        "outputPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/alex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj",
+        "projectName": "BacktestUnicorn.Persistence",
+        "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj",
+        "packagesPath": "/Users/alex/.nuget/packages/",
+        "outputPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/alex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj"
+              },
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.SiloTestCluster/BacktestUnicorn.SiloTestCluster.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.SiloTestCluster/BacktestUnicorn.SiloTestCluster.csproj",
+        "projectName": "BacktestUnicorn.SiloTestCluster",
+        "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.SiloTestCluster/BacktestUnicorn.SiloTestCluster.csproj",
+        "packagesPath": "/Users/alex/.nuget/packages/",
+        "outputPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.SiloTestCluster/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/alex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj"
+              },
+              "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj": {
+                "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -8,4 +8,7 @@ public interface IMongoDbContext
 {
     IMongoCollection<PersistenceModel<TState>> Collection<TState>()
         where TState : State;
+    
+    IMongoCollection<JournalModel> Journal<TState>()
+        where TState : State;
 }

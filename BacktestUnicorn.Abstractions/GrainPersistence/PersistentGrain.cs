@@ -15,8 +15,7 @@ public class PersistentGrain<TState, TEvent> : JournaledGrain<TState, TEvent>, I
     {
         await using var scope = ServiceProvider.CreateAsyncScope();
         var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
-        var state = await mediator.Send(new StateRequest<TState>(this.GetPrimaryKey())) ?? new TState();
-        return new KeyValuePair<int, TState>(1, state);
+        return await mediator.Send(new StateQuery<TState>(this.GetPrimaryKey()));
     }
 
     public async Task<bool> ApplyUpdatesToStorage(IReadOnlyList<TEvent> updates, int expectedversion)
@@ -27,7 +26,7 @@ public class PersistentGrain<TState, TEvent> : JournaledGrain<TState, TEvent>, I
         var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
         foreach (var update in updates)
         {
-            var command = update.Command();
+            var command = update.Command(Version, this.GetPrimaryKey());
             updateResult = updateResult && await mediator.Send(command);
         }
 

@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Abstractions", "BacktestUnicorn.Abstractions\BacktestUnicorn.Abstractions.csproj", "{9F8A6284-B3D0-4A8E-AA80-60751806E393}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Abstractions", "Hermes.Abstractions\Hermes.Abstractions.csproj", "{9F8A6284-B3D0-4A8E-AA80-60751806E393}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Core", "BacktestUnicorn.Core\BacktestUnicorn.Core.csproj", "{D3763770-F91E-432D-AD32-ECB2B6BF0469}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Core", "Hermes.Core\Hermes.Core.csproj", "{D3763770-F91E-432D-AD32-ECB2B6BF0469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Persistence", "BacktestUnicorn.Persistence\BacktestUnicorn.Persistence.csproj", "{01F3BAF4-245A-4A15-B2BD-6C690FA4218B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Persistence", "Hermes.Persistence\Hermes.Persistence.csproj", "{01F3BAF4-245A-4A15-B2BD-6C690FA4218B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Persistence.Mapping", "BacktestUnicorn.Persistence.Mapping\BacktestUnicorn.Persistence.Mapping.csproj", "{31576906-3D5F-4C7A-AF86-BC243B9A38AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Persistence.Mapping", "Hermes.Persistence.Mapping\Hermes.Persistence.Mapping.csproj", "{31576906-3D5F-4C7A-AF86-BC243B9A38AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.Mediator", "BacktestUnicorn.Mediator\BacktestUnicorn.Mediator.csproj", "{624EE7C6-6D8E-4088-A65A-E4AC74B4547D}"
 EndProject
@@ -19,6 +19,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{E9E2EF90-E44F-4414-A8BB-702D6E92D31F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktestUnicorn.SiloTestCluster", "BacktestUnicorn.SiloTestCluster\BacktestUnicorn.SiloTestCluster.csproj", "{617E5660-8057-4986-9D54-152421F07196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.MarketData.Abstractions", "Hermes.MarketData.Abstractions\Hermes.MarketData.Abstractions.csproj", "{38B58397-EB25-4206-BC80-2759C862902C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Silo", "Hermes.Silo\Hermes.Silo.csproj", "{412EC69B-B361-4948-8D29-CD0D3146BBAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Connectors.MarketData", "Hermes.Connectors.MarketData\Hermes.Connectors.MarketData.csproj", "{8EC6B2E9-767E-4F97-9E39-ACBD536D646D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +64,18 @@ Global
 		{617E5660-8057-4986-9D54-152421F07196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{617E5660-8057-4986-9D54-152421F07196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{617E5660-8057-4986-9D54-152421F07196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B58397-EB25-4206-BC80-2759C862902C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B58397-EB25-4206-BC80-2759C862902C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B58397-EB25-4206-BC80-2759C862902C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B58397-EB25-4206-BC80-2759C862902C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412EC69B-B361-4948-8D29-CD0D3146BBAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412EC69B-B361-4948-8D29-CD0D3146BBAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412EC69B-B361-4948-8D29-CD0D3146BBAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412EC69B-B361-4948-8D29-CD0D3146BBAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC6B2E9-767E-4F97-9E39-ACBD536D646D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC6B2E9-767E-4F97-9E39-ACBD536D646D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC6B2E9-767E-4F97-9E39-ACBD536D646D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC6B2E9-767E-4F97-9E39-ACBD536D646D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2AEEE8AA-E682-491D-A9E3-41CFD76760C1} = {4C213121-26E3-453B-9A82-C510E6812965}

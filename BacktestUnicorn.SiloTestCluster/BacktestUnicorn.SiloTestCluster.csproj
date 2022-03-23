@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BacktestUnicorn.Core\BacktestUnicorn.Core.csproj" />
-      <ProjectReference Include="..\BacktestUnicorn.Persistence\BacktestUnicorn.Persistence.csproj" />
+      <ProjectReference Include="..\Hermes.Core\Hermes.Core.csproj" />
+      <ProjectReference Include="..\Hermes.Persistence\Hermes.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

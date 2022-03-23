@@ -679,61 +679,73 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "BacktestUnicorn.Abstractions/1.0.0": {
+      "Hermes.Abstractions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Hermes.MarketData.Abstractions": "1.0.0",
           "MediatR": "10.0.1",
           "Microsoft.Orleans.Core.Abstractions": "3.6.0",
           "Microsoft.Orleans.EventSourcing": "3.6.0",
           "Serilog": "2.10.0"
         },
         "compile": {
-          "bin/placeholder/BacktestUnicorn.Abstractions.dll": {}
+          "bin/placeholder/Hermes.Abstractions.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BacktestUnicorn.Abstractions.dll": {}
+          "bin/placeholder/Hermes.Abstractions.dll": {}
         }
       },
-      "BacktestUnicorn.Core/1.0.0": {
+      "Hermes.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "BacktestUnicorn.Abstractions": "1.0.0"
+          "Hermes.Abstractions": "1.0.0",
+          "Microsoft.Orleans.Core.Abstractions": "3.6.0"
         },
         "compile": {
-          "bin/placeholder/BacktestUnicorn.Core.dll": {}
+          "bin/placeholder/Hermes.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BacktestUnicorn.Core.dll": {}
+          "bin/placeholder/Hermes.Core.dll": {}
         }
       },
-      "BacktestUnicorn.Persistence/1.0.0": {
+      "Hermes.MarketData.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Hermes.MarketData.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hermes.MarketData.Abstractions.dll": {}
+        }
+      },
+      "Hermes.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "BacktestUnicorn.Core": "1.0.0",
-          "BacktestUnicorn.Persistence.Mapping": "1.0.0",
+          "Hermes.Core": "1.0.0",
+          "Hermes.Persistence.Mapping": "1.0.0",
           "MongoDB.Driver": "2.14.1"
         },
         "compile": {
-          "bin/placeholder/BacktestUnicorn.Persistence.dll": {}
+          "bin/placeholder/Hermes.Persistence.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BacktestUnicorn.Persistence.dll": {}
+          "bin/placeholder/Hermes.Persistence.dll": {}
         }
       },
-      "BacktestUnicorn.Persistence.Mapping/1.0.0": {
+      "Hermes.Persistence.Mapping/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "BacktestUnicorn.Core": "1.0.0"
+          "Hermes.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/BacktestUnicorn.Persistence.Mapping.dll": {}
+          "bin/placeholder/Hermes.Persistence.Mapping.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BacktestUnicorn.Persistence.Mapping.dll": {}
+          "bin/placeholder/Hermes.Persistence.Mapping.dll": {}
         }
       }
     }
@@ -2098,31 +2110,36 @@
         "version.txt"
       ]
     },
-    "BacktestUnicorn.Abstractions/1.0.0": {
+    "Hermes.Abstractions/1.0.0": {
       "type": "project",
-      "path": "../BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj",
-      "msbuildProject": "../BacktestUnicorn.Abstractions/BacktestUnicorn.Abstractions.csproj"
+      "path": "../Hermes.Abstractions/Hermes.Abstractions.csproj",
+      "msbuildProject": "../Hermes.Abstractions/Hermes.Abstractions.csproj"
     },
-    "BacktestUnicorn.Core/1.0.0": {
+    "Hermes.Core/1.0.0": {
       "type": "project",
-      "path": "../BacktestUnicorn.Core/BacktestUnicorn.Core.csproj",
-      "msbuildProject": "../BacktestUnicorn.Core/BacktestUnicorn.Core.csproj"
+      "path": "../Hermes.Core/Hermes.Core.csproj",
+      "msbuildProject": "../Hermes.Core/Hermes.Core.csproj"
     },
-    "BacktestUnicorn.Persistence/1.0.0": {
+    "Hermes.MarketData.Abstractions/1.0.0": {
       "type": "project",
-      "path": "../BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj",
-      "msbuildProject": "../BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj"
+      "path": "../Hermes.MarketData.Abstractions/Hermes.MarketData.Abstractions.csproj",
+      "msbuildProject": "../Hermes.MarketData.Abstractions/Hermes.MarketData.Abstractions.csproj"
     },
-    "BacktestUnicorn.Persistence.Mapping/1.0.0": {
+    "Hermes.Persistence/1.0.0": {
       "type": "project",
-      "path": "../BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj",
-      "msbuildProject": "../BacktestUnicorn.Persistence.Mapping/BacktestUnicorn.Persistence.Mapping.csproj"
+      "path": "../Hermes.Persistence/Hermes.Persistence.csproj",
+      "msbuildProject": "../Hermes.Persistence/Hermes.Persistence.csproj"
+    },
+    "Hermes.Persistence.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../Hermes.Persistence.Mapping/Hermes.Persistence.Mapping.csproj",
+      "msbuildProject": "../Hermes.Persistence.Mapping/Hermes.Persistence.Mapping.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BacktestUnicorn.Core >= 1.0.0",
-      "BacktestUnicorn.Persistence >= 1.0.0"
+      "Hermes.Core >= 1.0.0",
+      "Hermes.Persistence >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2154,11 +2171,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj": {
-              "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Core/BacktestUnicorn.Core.csproj"
+            "/Users/alex/Documents/projects/backtest-unicorn/Hermes.Core/Hermes.Core.csproj": {
+              "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/Hermes.Core/Hermes.Core.csproj"
             },
-            "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj": {
-              "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/BacktestUnicorn.Persistence/BacktestUnicorn.Persistence.csproj"
+            "/Users/alex/Documents/projects/backtest-unicorn/Hermes.Persistence/Hermes.Persistence.csproj": {
+              "projectPath": "/Users/alex/Documents/projects/backtest-unicorn/Hermes.Persistence/Hermes.Persistence.csproj"
             }
           }
         }

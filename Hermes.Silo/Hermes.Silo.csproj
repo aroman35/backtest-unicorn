@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Hermes.Silo-E28EDC32-1020-4A3C-AA7F-CE3E8EC48848</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Orleans.OrleansTelemetryConsumers.Counters" Version="3.6.0" />
+        <PackageReference Include="Microsoft.Orleans.Server" Version="3.6.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hermes.Core\Hermes.Core.csproj" />
+    </ItemGroup>
+</Project>

@@ -2,6 +2,7 @@ using Hermes.Connectors.MarketData;
 using Hermes.Connectors.MarketData.ExcahngeModels.Binance;
 using Orleans;
 using Orleans.Configuration;
+using Serilog;
 
 IClusterClient orleansClient = new ClientBuilder()
     .UseLocalhostClustering()
@@ -10,19 +11,21 @@ IClusterClient orleansClient = new ClientBuilder()
         options.ClusterId = "dev";
         options.ServiceId = "hermes";
     })
-    .ConfigureLogging(logging => logging.AddConsole())
     .Build();
 
 await orleansClient.Connect();
 
 IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration(config => config
+        .AddEnvironmentVariables()
+        .AddJsonFile("loggerSettings.json", false))
+    .UseSerilog((context, builder) => builder.ReadFrom.Configuration(context.Configuration))
     .ConfigureServices(services =>
     {
         services.AddSingleton(orleansClient);
         services
             .AddHostedService<Worker>()
-            .AddAutoMapper(typeof(MappingProfile).Assembly)
-            ;
+            .AddAutoMapper(typeof(MappingProfile).Assembly);
 
     })
     .Build();

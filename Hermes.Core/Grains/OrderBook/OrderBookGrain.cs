@@ -3,15 +3,31 @@ using Hermes.Abstractions.GrainInterfaces.MarketData;
 using Hermes.MarketData.Abstractions.OrderBook;
 using Orleans.EventSourcing;
 using Orleans.Providers;
+using Serilog;
 
 namespace Hermes.Core.Grains.OrderBook;
 
 [LogConsistencyProvider(ProviderName = "LogStorage")]
 public class OrderBookGrain : JournaledGrain<OrderBookState, OrderBookEventBase>, IOrderBookGrain
 {
+    private readonly ILogger _logger;
+
+    public OrderBookGrain(ILogger logger)
+    {
+        _logger = logger.ForContext<OrderBookGrain>();
+    }
+
     public Task AddSnapshot(OrderBookSnapshot orderBookSnapshot)
     {
+        _logger.Information("Order-book snapshot added");
         RaiseEvent(new AddOrderBookSnapshotEvent(orderBookSnapshot));
+        return Task.CompletedTask;
+    }
+
+    public Task ApplyDifference(OrderBookDiffModel orderBookDiffModel)
+    {
+        _logger.Information("Order-book update received");
+        RaiseEvent(new AddOrderBookDifference(orderBookDiffModel));
         return Task.CompletedTask;
     }
 

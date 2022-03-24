@@ -6,6 +6,7 @@ namespace Hermes.Abstractions.GrainInterfaces.MarketData;
 public interface IOrderBookGrain : IGrainWithStringKey
 {
     Task AddSnapshot(OrderBookSnapshot orderBookSnapshot);
+    Task ApplyDifference(OrderBookDiffModel orderBookDiffModel);
     Task<SortedDictionary<decimal, decimal>> Asks();
     Task<SortedDictionary<decimal, decimal>> Bids();
     Task<OrderBookEntry> BestBid();

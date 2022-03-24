@@ -3,8 +3,13 @@ using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Statistics;
+using Serilog;
 
 IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration(config => config
+        .AddEnvironmentVariables()
+        .AddJsonFile("loggerSettings.json", false))
+    .UseSerilog((context, builder) => builder.ReadFrom.Configuration(context.Configuration))
     .UseOrleans((context, builder) =>
     {
         builder
@@ -17,7 +22,6 @@ IHost host = Host.CreateDefaultBuilder(args)
             .ConfigureApplicationParts(parts => parts
                 .AddApplicationPart(typeof(OrderBookGrain).Assembly)
                 .WithReferences())
-            .ConfigureLogging(logging => logging.AddConsole())
             .UsePerfCounterEnvironmentStatistics()
             .AddMemoryGrainStorageAsDefault()
             .AddLogStorageBasedLogConsistencyProvider();

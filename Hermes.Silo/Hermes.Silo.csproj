@@ -26,6 +26,10 @@
       <Content Remove="loggerSettings.json" />
       <None Include="loggerSettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <DependentUpon>appsettings.json</DependentUpon>
       </None>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
     </ItemGroup>
 </Project>

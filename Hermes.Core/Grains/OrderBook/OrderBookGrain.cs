@@ -19,14 +19,14 @@ public class OrderBookGrain : JournaledGrain<OrderBookState, OrderBookEventBase>
 
     public Task AddSnapshot(OrderBookSnapshot orderBookSnapshot)
     {
-        _logger.Information("Order-book snapshot added");
+        _logger.Debug("Order-book snapshot added");
         RaiseEvent(new AddOrderBookSnapshotEvent(orderBookSnapshot));
         return Task.CompletedTask;
     }
 
     public Task ApplyDifference(OrderBookDiffModel orderBookDiffModel)
     {
-        _logger.Information("Order-book update received");
+        _logger.Debug("Order-book update received");
         RaiseEvent(new AddOrderBookDifference(orderBookDiffModel));
         return Task.CompletedTask;
     }

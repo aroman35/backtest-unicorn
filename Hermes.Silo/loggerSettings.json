@@ -5,10 +5,10 @@
       "Serilog.Sinks.Console"
     ],
     "MinimumLevel": {
-      "Default": "Information",
+      "Default": "Verbose",
       "Override": {
         "Microsoft": "Information",
-        "System": "Information"
+        "System": "Verbose"
       }
     },
     "WriteTo": [
@@ -21,7 +21,7 @@
               "Args": {
                 "theme": "Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme::Code, Serilog.Sinks.Console",
                 "outputTemplate": "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {SourceContext}{NewLine}{Exception}",
-                "restrictedToMinimumLevel": "Information"
+                "restrictedToMinimumLevel": "Verbose"
               }
             }
           ]

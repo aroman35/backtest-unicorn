@@ -52,10 +52,6 @@ public class Worker : BackgroundService
         {
             _logger.LogError(exception, "Error");
         }
-        while (!stoppingToken.IsCancellationRequested)
-        {
-            await Task.Delay(1000, stoppingToken);
-        }
     }
 
     private async Task<OrderBookSnapshot> SnapshotQuery()
@@ -82,11 +78,12 @@ public class Worker : BackgroundService
             .MessageReceived
             .Where(message => !string.IsNullOrEmpty(message.Text))
             .Where(message => message.Text.Contains($"\"stream\":\"{streamName}\""))
-            .Select(message => JsonSerializer.Deserialize<StreamMessage<OrderBookDiffExchangeModel>>(message.Text).Data)
-            .Select(trade => _mapper.Map<OrderBookDiffModel>(trade))
-            .Select(diff => Observable.FromAsync(async () => await onMessage(diff)))
-            .Concat()
-            .Subscribe(msg => _logger.LogInformation("Order book update received"));
+            .Subscribe(x => OnMessageTest(x.Text));
+            //.Select(message => JsonSerializer.Deserialize<StreamMessage<OrderBookDiffExchangeModel>>(message.Text).Data)
+            // .Select(trade => _mapper.Map<OrderBookDiffModel>(trade))
+            // .Select(diff => Observable.FromAsync(async () => await onMessage(diff)))
+            // .Concat()
+            // .Subscribe(msg => _logger.LogInformation("Order book update received"));
 
         var subscribeMessage = GenerateSubscribeMessage(new []{streamName});
         _websocketClient.Send(subscribeMessage);
@@ -94,6 +91,13 @@ public class Worker : BackgroundService
         _logger.LogInformation("Connected {Symbol} on order-book updates stream", symbol);
         
         return subscription;
+    }
+
+    private void OnMessageTest(string message)
+    {
+        var diff = JsonSerializer.Deserialize<StreamMessage<OrderBookDiffExchangeModel>>(message).Data;
+        var diffModel = _mapper.Map<OrderBookDiffModel>(diff);
+        _logger.LogInformation("Order book updated");
     }
     
     private string GenerateSubscribeMessage(string[] streamNames)

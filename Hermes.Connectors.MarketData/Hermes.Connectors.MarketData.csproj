@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dotnet-Hermes.Connectors.MarketData-425DDA69-819D-4A3E-8CB8-177BFD81B827</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>

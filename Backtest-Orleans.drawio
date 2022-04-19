@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-19T15:16:54.749Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" etag="k4scuQtyqOg-vYFhbBAC" version="17.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-19T15:31:13.779Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" etag="Ven7OrV_K3RGVY1Btad3" version="17.4.5" type="github">
   <diagram id="umQyPujXbN5syqFtYzND" name="Page-1">
     <mxGraphModel dx="2047" dy="2281" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -306,7 +306,7 @@
         <mxCell id="u-obf0jCSXc7kFt25eYQ-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;" parent="1" source="u-obf0jCSXc7kFt25eYQ-37" target="u-obf0jCSXc7kFt25eYQ-39" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="u-obf0jCSXc7kFt25eYQ-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" parent="1" source="u-obf0jCSXc7kFt25eYQ-37" target="u-obf0jCSXc7kFt25eYQ-45" edge="1">
+        <mxCell id="u-obf0jCSXc7kFt25eYQ-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="u-obf0jCSXc7kFt25eYQ-37" target="u-obf0jCSXc7kFt25eYQ-45" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="u-obf0jCSXc7kFt25eYQ-37" value="Job: получить CacheEntry" style="whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;fontColor=#000000;rounded=1;arcSize=40;" parent="1" vertex="1">
@@ -315,7 +315,7 @@
         <mxCell id="u-obf0jCSXc7kFt25eYQ-39" value="Responce with: Status cache" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
           <mxGeometry x="97.5" y="1210" width="215" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="u-obf0jCSXc7kFt25eYQ-40" value="Ready" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.475;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="u-obf0jCSXc7kFt25eYQ-39" target="u-obf0jCSXc7kFt25eYQ-43" edge="1">
+        <mxCell id="u-obf0jCSXc7kFt25eYQ-40" value="Ready /&amp;nbsp; not ready" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.475;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="u-obf0jCSXc7kFt25eYQ-39" target="u-obf0jCSXc7kFt25eYQ-43" edge="1">
           <mxGeometry x="-0.8299" y="16" relative="1" as="geometry">
             <mxPoint x="340" y="1230" as="targetPoint" />
             <Array as="points">
@@ -340,7 +340,7 @@
           <mxGeometry x="100" y="1430" width="220" height="40" as="geometry" />
         </mxCell>
         <mxCell id="u-obf0jCSXc7kFt25eYQ-45" value="Каждый Cache отдает свой CacheEntry" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=40;" parent="1" vertex="1">
-          <mxGeometry x="560" y="1000" width="240" height="40" as="geometry" />
+          <mxGeometry x="320" y="1169" width="240" height="40" as="geometry" />
         </mxCell>
         <mxCell id="u-obf0jCSXc7kFt25eYQ-47" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
           <mxGeometry x="195" y="1570" width="30" height="30" as="geometry" />
@@ -362,32 +362,6 @@
         </mxCell>
         <mxCell id="u-obf0jCSXc7kFt25eYQ-60" value="Cache Запрашивает директорию для хранения файла кеша у агента" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-305" y="1530" width="330" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-1" value="BuildIt" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#FF0000;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u-obf0jCSXc7kFt25eYQ-39" target="fj61uhyNUdGi-bkuHzr7-2">
-          <mxGeometry x="-1" y="20" relative="1" as="geometry">
-            <mxPoint x="470" y="1380" as="targetPoint" />
-            <Array as="points" />
-            <mxPoint x="330" y="1259.6874418604652" as="sourcePoint" />
-            <mxPoint x="-2" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;" edge="1" parent="1" source="fj61uhyNUdGi-bkuHzr7-2" target="fj61uhyNUdGi-bkuHzr7-3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-2" value="Job: выполнить на стартегии&amp;nbsp;&lt;br&gt;сборку кеша" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#FF0000;fontColor=#000000;arcSize=40;" vertex="1" parent="1">
-          <mxGeometry x="414" y="1230" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;" edge="1" parent="1" source="fj61uhyNUdGi-bkuHzr7-3" target="fj61uhyNUdGi-bkuHzr7-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;" edge="1" parent="1" source="fj61uhyNUdGi-bkuHzr7-3" target="u-obf0jCSXc7kFt25eYQ-37">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-3" value="Job: Отправить build success &lt;br&gt;на грейн кеша" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#FF0000;fontColor=#000000;arcSize=40;" vertex="1" parent="1">
-          <mxGeometry x="414" y="1320" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fj61uhyNUdGi-bkuHzr7-5" value="Cache: вызов валидации&lt;br&gt;данных через агента и чтение&amp;nbsp;&lt;br&gt;meta для записи своих полей state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;fontColor=#000000;arcSize=40;" vertex="1" parent="1">
-          <mxGeometry x="414" y="1410" width="200" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
